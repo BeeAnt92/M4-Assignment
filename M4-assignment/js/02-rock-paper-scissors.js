@@ -7,50 +7,62 @@ let playerChoice = ['rock', 'paper', 'scissors'];
 let computerChoice = playerChoice[Math.floor(Math.random() * 3)];
 let result;
 
-if (computerChoice === 0) {
+if (computerChoice === 'rock') {
     result = String('rock');
 }
-if (computerChoice === 1) {
+if (computerChoice === 'paper') {
     result = String('paper');
 }
-if (computerChoice === 2) {
+if (computerChoice === 'scissors') {
     result = String('scissors');
 }
 
     while (true) {
         playerChoice = String(prompt('rock, paper, or scissors?'));
         //Rock//
-        if (playerChoice === 'rock' && computerChoice === 'rock') {
-            alert('You tied!');            
-        } else if (playerChoice === 'rock' && computerChoice === 'paper') {
-            alert('Paper covers rock! Computer wins!');            
-        } else if (playerChoice === 'rock' && computerChoice === 'scissors') {
-            alert('Rock destroys Scissors! You Win!');
-        } 
-        //Paper//
-        if (playerChoice === 'paper' && computerChoice === 'rock') {
-            alert('Paper covers rock! You Win!');            
-        } else if (playerChoice === 'paper' && computerChoice === 'paper') {
-            alert('You tied!');
-        } else if (playerChoice === 'paper' && computerChoice === 'scissors') {
-            alert('Scissors cut paper! You lose!');
-        } 
-        //Scissors//
-        if (playerChoice === 'scissors' && computerChoice === 'rock') {
-            alert('Rock destroys scissors! You lose!');
-        } else if (playerChoice === 'scissors' && computerChoice === 'paper') {
-            alert('Scissors cut paper! You win!');
-        } else if (playerChoice === 'scissors' && computerChoice === 'scissors') {
-            alert('You tied!');
-        } 
-        //Wrong//
-    }
-    while (false) {
-        if (playerChoice !== 'rock', 'paper', 'scissors') {
-            alert('Not a valid option');
-            return;
+        if (playerChoice === 'rock') {
+            if (computerChoice === 'rock') {
+                alert('You Tied')
+                break;
+            } else if (computerChoice === 'paper') {
+                alert('Paper covers rock! You Lose!')
+                break;
+            } else {
+                alert('Rock destroys scissors! You win!')
+                break;
+            }
         }
-    }
+        //Paper//
+        if (playerChoice === 'paper') {
+            if (computerChoice === 'rock') {
+                alert('Paper covers rock! You win!')
+                break;
+            } else if (computerChoice === 'paper') {
+                alert('You tied!')
+                break;
+            } else {
+                alert('Scissors cut paper! You Lose!')
+                break;
+            }
+        }
+        //Scissors//
+        if (playerChoice === 'scissors')  {
+            if (computerChoice === 'rock') {
+                alert('Rock destroys scissors! You lose!')
+                break;
+            } else if (computerChoice === 'paper') {
+                alert('Scissors cut paper! You win!')
+                break;
+            } else {
+                alert('You tied!')
+                break;
+            }
+        }
+        //Wrong//
+        else (playerChoice !== 'rock', 'paper', 'scissors'); {
+                alert('Not a valid option')
+        }
+    } 
 }
 
 function main() {
@@ -62,4 +74,4 @@ function main() {
     }
     alert('Thanks for playing the game!');
 }
-main();
+main()
